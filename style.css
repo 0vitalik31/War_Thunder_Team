@@ -1,0 +1,378 @@
+:root {
+    --bg-color: #1a1a2e;
+    --card-bg: #16213e;
+    --text-color: #e6e6e6;
+    --accent-color: #0f8b8d;
+    --secondary-color: #4a4a8a;
+    --danger-color: #e94560;
+    --success-color: #2ecc71;
+    --warning-color: #f39c12;
+    --border-color: #2d4059;
+}
+
+.light-theme {
+    --bg-color: #f5f5f5;
+    --card-bg: #ffffff;
+    --text-color: #333333;
+    --accent-color: #3498db;
+    --secondary-color: #95a5a6;
+    --danger-color: #e74c3c;
+    --success-color: #27ae60;
+    --warning-color: #f39c12;
+    --border-color: #dddddd;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-color);
+}
+
+h1 {
+    margin-bottom: 10px;
+    color: var(--accent-color);
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.teams-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.team {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    border: 1px solid var(--border-color);
+}
+
+.team:hover {
+    transform: translateY(-5px);
+}
+
+.team-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.team-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.team-title:hover {
+    background-color: var(--bg-color);
+}
+
+.team-title-input {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    background: var(--bg-color);
+    border: 1px solid var(--accent-color);
+    border-radius: 4px;
+    padding: 4px 8px;
+    width: 70%;
+}
+
+.team-stats {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.stat {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: var(--bg-color);
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.stat-btn {
+    padding: 3px 8px;
+    font-size: 0.8rem;
+}
+
+.wins {
+    color: var(--success-color);
+}
+
+.losses {
+    color: var(--danger-color);
+}
+
+.remove-team {
+    background-color: var(--danger-color);
+    padding: 5px 10px;
+    font-size: 0.8rem;
+}
+
+.remove-team:hover {
+    background-color: #c0392b;
+}
+
+.player-list {
+    list-style-type: none;
+}
+
+.player {
+    padding: 8px;
+    margin-bottom: 8px;
+    background-color: var(--bg-color);
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--border-color);
+}
+
+.player-info {
+    flex-grow: 1;
+}
+
+.player-nickname {
+    font-weight: bold;
+}
+
+.player-type {
+    font-size: 0.8rem;
+    padding: 2px 6px;
+    border-radius: 10px;
+    color: white;
+}
+
+.type-ground {
+    background-color: #8e44ad;
+}
+
+.type-air {
+    background-color: #3498db;
+}
+
+.type-universal {
+    background-color: #2ecc71;
+}
+
+.player-commander {
+    background-color: rgba(255, 193, 7, 0.2);
+    border-left: 3px solid var(--warning-color);
+    order: -1;
+}
+
+.set-commander {
+    background-color: var(--warning-color);
+    padding: 3px 8px;
+    font-size: 0.7rem;
+    margin-left: 5px;
+}
+
+.edit-player {
+    background-color: var(--secondary-color);
+    padding: 3px 8px;
+    font-size: 0.7rem;
+    margin-left: 5px;
+}
+
+.remove-player {
+    background-color: var(--danger-color);
+    padding: 3px 8px;
+    font-size: 0.7rem;
+    margin-left: 5px;
+}
+
+.player-actions {
+    display: flex;
+}
+
+.available-players {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-color);
+}
+
+.available-players h3 {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--accent-color);
+}
+
+.player-select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.add-player-btn {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.player-vehicles {
+    font-size: 0.8rem;
+    color: var(--secondary-color);
+    margin-top: 3px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--border-color);
+}
+
+.modal h3 {
+    margin-bottom: 15px;
+    color: var(--accent-color);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.vehicles-input {
+    margin-top: 5px;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.cancel-btn {
+    background-color: var(--secondary-color);
+}
+
+.cancel-btn:hover {
+    background-color: #7f8c8d;
+}
+
+.save-btn {
+    background-color: var(--success-color);
+}
+
+.save-btn:hover {
+    background-color: #27ae60;
+}
+
+@media (max-width: 768px) {
+    .teams-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .controls {
+        flex-direction: column;
+    }
+}
