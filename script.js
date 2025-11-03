@@ -1,11 +1,6 @@
 // Оптимизированные данные
 const initialPlayers = [
-    { nickname: "TankMaster", name: "Алексей", type: "земля", vehicles: ["Т-72", "Т-90", "БМП-3"] },
-    { nickname: "SkyHunter", name: "Дмитрий", type: "воздух", vehicles: ["МиГ-29", "Су-27", "Ка-52"] },
-    { nickname: "UniversalSoldier", name: "Сергей", type: "универсал", vehicles: ["Т-80", "Ми-24", "БТР-80"] },
-    { nickname: "GroundPounder", name: "Иван", type: "земля", vehicles: ["Т-14 Армата", "БМП-2", "САУ 2С19"] },
-    { nickname: "AirDominator", name: "Михаил", type: "воздух", vehicles: ["Су-35", "МиГ-31", "Ту-160"] },
-    { nickname: "AllRounder", name: "Андрей", type: "универсал", vehicles: ["Т-72", "Су-25", "БРДМ-2"] }
+    { nickname: "PUTIN", name: "ВВ", type: "универсал", vehicles: ["все что движется"] },
 ];
 
 // Состояние приложения
